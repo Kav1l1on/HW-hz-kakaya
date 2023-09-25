@@ -56,10 +56,10 @@ class Weapon:
     damage = 0
     durability = 15
     def isAlive(self):
-        if(self.durability<=0):
-            return False
-        else:
-            return True
+       if(self.durability<=0):
+          return False
+       else:
+          return True
 
 
 class Sword(Weapon):
@@ -69,13 +69,13 @@ class Sword(Weapon):
         self.durability = 5
 
 
-class infantryman(Warrior,):
-   def __init__(self, name):
-       super().__init__()
-       self.Armor = 40
-       self.HP = 120
-       self.name = name
-       self.weapon = Sword()
+class Gopher(Warrior,):
+    def __init__(self, name):
+        super().__init__()
+        self.Armor = 40
+        self.HP = 120
+        self.name = name
+        self.weapon = Sword()
 
 
 class Bow(Weapon):
@@ -85,7 +85,7 @@ class Bow(Weapon):
       self.durability = 1
 
 
-class Bowman:
+class Bowman(Warrior):
     def __init__(self, name):
         super().__init__()
         self.HP = 70
@@ -112,7 +112,7 @@ class Stickman(Warrior):
 
 army1 = []
 for i in range(0, 3):
-    name = input("Enter the name for rider: ")
+    name = input("Enter the name for warrior: ")
     army1.append(Rider(name))
 for rider in army1:
     print(f"{rider.name}: HP={rider.HP}, Armor={rider.Armor}, Weapon={rider.weapon.__class__.__name__}")
@@ -125,15 +125,15 @@ for Bowman in army1:
 
 army2 = []
 for i in range(0, 3):
-    name = input("Enter the name for rider: ")
+    name = input("Enter the name for warrior: ")
     army2.append(Rider(name))
 for rider in army2:
     print(f"{rider.name}: HP={rider.HP}, Armor={rider.Armor}, Weapon={rider.weapon.__class__.__name__}")
 
-for Stickman in army1:
+for Stickman in army2:
     print(f"{Stickman.name}: HP={Stickman.HP}, Armor={Stickman.Armor}, Weapon={Stickman.weapon.__class__.__name__}")
 
-for Bowman in army1:
+for Bowman in army2:
     print(f"{Bowman.name}: HP={Bowman.HP}, Armor={Bowman.Armor}, Weapon={Bowman.weapon.__class__.__name__}")
 
 counf_fight = 0
